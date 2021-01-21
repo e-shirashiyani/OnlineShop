@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryViewModel"
+            type="com.example.onlineshop.viewmodel.CategoryViewModel" />
+
+        <variable
+            name="parentId"
+            type="Integer" />
+
+        <variable
+            name="state"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#9ba4b4"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> categoryViewModel.onClickListItem(parentId,state)}">
+
+
+        <ImageView
+            android:id="@+id/image_category"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_shopping_cart__3_" />
+
+        <TextView
+            android:id="@+id/text_category"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/image_category"
+            android:layout_alignBottom="@+id/image_category"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toLeftOf="@+id/image_category"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:text="@string/menu_category" />
+    </RelativeLayout>
+</layout>

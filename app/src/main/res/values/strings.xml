@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">OnlineShop</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_gallery">Categories</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_category">Category</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="the_highest_score_products">The Highest Score Products:</string>
+    <string name="the_most_visited_products">The Most Visited Products:</string>
+    <string name="the_latest_products">The Latest Products:</string>
+    <string name="product_features">Product Features:</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="total">Total</string>
+    <string name="product_specifications">Product Specifications:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
+    <string name="toman">Toman</string>
+    <string name="Continue">Continue</string>
+    <string name="the_total_sales">The total sales</string>
+    <string name="prices_from_high_to_low">Prices from high to low</string>
+    <string name="prices_from_low_to_high">Prices from low to high</string>
+    <string name="newest">Newest</string>
+
+
+    <string name="channel_id">onlineStore_channel_id</string>
+    <string name="channel_name">OnlineStore Channel</string>
+    <string name="channel_description">This is notification channel for onlineStore</string>
+    <string name="start_polling">Start polling</string>
+    <string name="stop_polling">Stop polling</string>
+    <string name="new_product_title">New Product</string>
+    <string name="new_product_text">You have new product in OnlineStore.</string>
+    <string name="notification">Notification</string>
+    <string name="location">Location</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="_3hour">3Hour</string>
+    <string name="_5hour">5Hour</string>
+    <string name="_8hour">8Hour</string>
+    <string name="_12hour">12Hour</string>
+    <string name="none_of_them">none of them</string>
+    <string name="save">Save</string>
+    <string name="add_location">Add location</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="permission">our sample app needs location permission for save your location.</string>
+    <string name="location_permission">our app needs location turn on for saving your location.</string>
+    <string name="permission_go_to">Go to:</string>
+    <string name="path_of_permission">Location--> App permission--> OnlineStore--> Allow</string>
+    <string name="permission_dialog_title">We need location Permission</string>
+    <string name="location_dialog_title">Turn on location </string>
+    <string name="your_address">Your Address:</string>
+    <string name="discount_code">Discount code:</string>
+    <string name="hour">hour</string>
+    <string name="edit">Edit</string>
+    <string name="products">Products</string>
+    <string name="user_comments">User comments:</string>
+    <string name="add_comment">Add comment</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_comment">Your Comment</string>
+    <string name="location_dismiss_success">Location Dismissed Successfully.</string>
+    <string name="location_dismiss_undo">UNDO</string>
+    <string name="edit_comment">Edit comment:</string>
+    <string name="delete">Delete</string>
+    <string name="delete_comment">Are you sure?</string>
+    <string name="delete_comment_title">Delete Comment:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

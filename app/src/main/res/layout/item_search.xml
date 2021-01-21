@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.example.onlineshop.viewmodel.SearchViewModel" />
+
+        <variable
+            name="productId"
+            type="Integer" />
+
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> searchViewModel.onClickListItem(productId)}">
+
+
+        <ImageView
+            android:id="@+id/image_search_product"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/text_search_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/image_search_product"
+            android:layout_alignTop="@+id/image_search_product"
+            android:layout_alignBottom="@+id/image_search_product"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Medium"
+            tools:text="Search Product" />
+    </RelativeLayout>
+</layout>

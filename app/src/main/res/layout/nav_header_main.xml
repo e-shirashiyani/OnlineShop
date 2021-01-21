@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="#14274e"
+
+
+
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_wave__22_" />
+    <ImageView
+        android:layout_width="87dp"
+        android:layout_height="86dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:background="@drawable/ic_shopping_bags" />
+
+    <TextView
+        android:layout_width="224dp"
+        android:layout_height="67dp"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="51dp"
+        android:fontFamily="cursive"
+        android:text="OShop"
+        android:textColor="#9ba4b4"
+        android:textSize="43dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
