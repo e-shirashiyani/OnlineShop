@@ -17,6 +17,7 @@ import com.example.onlineshop.data.remote.retrofit.APIService;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceCategory;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceColor;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceComments;
+import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceCoupons;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceListOfProduct;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceProduct;
 import com.example.onlineshop.data.remote.retrofit.RetrofitInstanceSales;
