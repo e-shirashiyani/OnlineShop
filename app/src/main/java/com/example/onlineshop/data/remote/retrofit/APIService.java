@@ -2,6 +2,7 @@ package com.example.onlineshop.data.remote.retrofit;
 
 import com.example.onlineshop.data.model.ColorAttribute;
 import com.example.onlineshop.data.model.Comment;
+import com.example.onlineshop.data.model.Coupons;
 import com.example.onlineshop.data.model.Customer;
 import com.example.onlineshop.data.model.Product;
 import com.example.onlineshop.data.model.ProductCategory;
@@ -65,6 +66,10 @@ public interface APIService {
     Call<Comment> addComment(@Field("product_id") int product_id,@Field("review") String review,
                              @Field("reviewer") String reviewer,@Field("reviewer_email") String reviewer_email,
                              @Field("rating") int rating,@QueryMap Map<String, String> options);
+
+    @GET("coupons")
+    Call<List<Coupons>> coupons(@QueryMap Map<String, String> options);
+
 
 }
 
