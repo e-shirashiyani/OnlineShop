@@ -75,5 +75,15 @@
     <string name="delete_comment_title">Delete Comment:</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="check">check</string>
+    <string name="enter_code">Enter your code, please.</string>
+    <string name="discount_code_is_wrong">The discount code is wrong</string>
+    <string name="discount_code_is_applied_once">The discount code is applied once!</string>
+    <string name="discount_code_is_correct_but_higher">The discount code is correct but the total price is lower.
+        \n As a result, it does not apply.</string>
+    <string name="discount_code_is_correct">Discount code in the amount of %1$s Tomans was applied.</string>
+    <string name="buy">Buy</string>
+    <string name="enter_address">Enter your address, please.</string>
+    <string name="address">%1$s \n %2$s</string>
 
 </resources>

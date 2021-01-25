@@ -15,9 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapter.BuyProductAdapter;
+import com.example.onlineshop.data.model.Coupons;
 import com.example.onlineshop.data.model.Product;
 import com.example.onlineshop.databinding.FragmentBuyBinding;
 import com.example.onlineshop.view.activity.LocationActivity;
@@ -36,8 +39,11 @@ public class BuyFragment extends Fragment {
     private SettingViewModel mSettingViewModel;
     private CartViewModel mCartViewModel;
     private LiveData<Product> mProductLiveData;
+    private LiveData<List<Coupons>> mCouponsLiveData;
     private BuyProductAdapter mBuyProductAdapter;
     private List<Product> mProductList;
+    private String mCode = "";
+    boolean flagCheck = false;
 
     public BuyFragment() {
         // Required empty public constructor
@@ -67,18 +73,65 @@ public class BuyFragment extends Fragment {
             public void onChanged(Product product) {
                 mProductList.add(product);
                 mCartViewModel.setProductList(mProductList);
-                mBuyProductAdapter = new BuyProductAdapter(getActivity(),getActivity(), mCartViewModel);
+                mBuyProductAdapter = new BuyProductAdapter(getActivity(), getActivity(), mCartViewModel);
                 mBuyBinding.recyclerCart.setAdapter(mBuyProductAdapter);
-                int totalPrice = 0;
-                for (int i = 0; i < mProductList.size(); i++) {
-                    int price = Integer.parseInt(mProductList.get(i).getPrice());
-                    int count = mCartViewModel.getCart(mProductList.get(i).getId()).getProduct_count();
-                    totalPrice += (price * count);
-                }
-                mBuyBinding.totalPrice.setText(String.valueOf(totalPrice));
+                setTotalPrice();
 
             }
         });
+    }
+
+    private void setTotalPrice() {
+        int totalPrice = 0;
+        for (int i = 0; i < mProductList.size(); i++) {
+            int price = Integer.parseInt(mProductList.get(i).getPrice());
+            int count = mCartViewModel.getCart(mProductList.get(i).getId()).getProduct_count();
+            totalPrice += (price * count);
+        }
+        mBuyBinding.totalPrice.setText(String.valueOf(totalPrice));
+    }
+
+    public void codeObserver() {
+        mCouponsLiveData.observe(this, new Observer<List<Coupons>>() {
+            @Override
+            public void onChanged(List<Coupons> coupons) {
+                boolean flag = false;
+                for (int i = 0; i < coupons.size(); i++) {
+                    if (mBuyBinding.editTextCode.getText().toString().equals(coupons.get(i).getCode())) {
+                        mCode = coupons.get(i).getCode();
+                        applyCode(coupons.get(i).getAmount());
+                        flag = true;
+                    }
+                }
+                if (!flag) {
+                    mBuyBinding.textViewCheckCode.setText(R.string.discount_code_is_wrong);
+                    mBuyBinding.textViewCheckCode.setTextColor(getResources().getColor(R.color.warning));
+                    mCode = "";
+                    setTotalPrice();
+                }
+            }
+        });
+    }
+
+    private void applyCode(String amount) {
+        String[] codeAmountArray = amount.split("\\.");
+        String codeAmount = codeAmountArray[0];
+
+        if (Integer.parseInt(mBuyBinding.totalPrice.getText().toString()) > Integer.parseInt(codeAmount)) {
+            double newPrice = Integer.parseInt(mBuyBinding.totalPrice.getText().toString()) - Integer.parseInt(codeAmount);
+            mBuyBinding.totalPrice.setText(String.valueOf(newPrice).split("\\.")[0]);
+            String discountCodeReport = getString(
+                    R.string.discount_code_is_correct,
+                    codeAmount);
+            flagCheck = true;
+            mBuyBinding.textViewCheckCode.setText(discountCodeReport);
+            mBuyBinding.textViewCheckCode.setTextColor(getResources().getColor(R.color.teal_200));
+        } else if (!flagCheck){
+            mBuyBinding.textViewCheckCode.setText(R.string.discount_code_is_correct_but_higher);
+            mBuyBinding.textViewCheckCode.setTextColor(getResources().getColor(R.color.purple_500));
+            flagCheck = false;
+        }
+
     }
 
     @Override
@@ -86,7 +139,7 @@ public class BuyFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != Activity.RESULT_OK || data == null)
             return;
-        if (requestCode == REQUEST_CODE_LOCATION){
+        if (requestCode == REQUEST_CODE_LOCATION) {
             setLocation();
         }
     }
@@ -115,14 +168,43 @@ public class BuyFragment extends Fragment {
         mBuyBinding.buttonContinueBuying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCartViewModel.onclickBuy();
+                if (mSettingViewModel.getSelectedAddress() == null)
+                    Toast.makeText(getContext(), R.string.enter_address, Toast.LENGTH_SHORT).show();
+                else
+                    mCartViewModel.onclickBuy();
+            }
+        });
+        mBuyBinding.buttonCheckCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mBuyBinding.editTextCode.getText().toString().isEmpty()){
+                    Toast.makeText(getContext(),R.string.enter_code,Toast.LENGTH_SHORT).show();
+                    mBuyBinding.textViewCheckCode.setText("");
+                    setTotalPrice();
+                }
+                else if (mBuyBinding.editTextCode.getText().toString().equals(mCode)) {
+                    Toast toast = Toast.makeText(getContext(), R.string.discount_code_is_applied_once,
+                            Toast.LENGTH_LONG);
+                    TextView textView = (TextView) toast.getView().findViewById(android.R.id.message);
+                    textView.setTextColor(getResources().getColor(R.color.warning));
+                    toast.show();
+                }else if (!mBuyBinding.editTextCode.getText().toString().equals(mCode)){
+                    mCartViewModel.fetchCoupons();
+                    mCouponsLiveData = mCartViewModel.getLiveDataCoupons();
+                    codeObserver();
+                }
             }
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setLocation();
+    }
+
     private void initView() {
         setLocation();
-
         mBuyBinding.recyclerCart.setLayoutManager(new LinearLayoutManager(getContext()));
         mSettingViewModel.setContext(getActivity());
         mBuyBinding.setSettingViewModel(mSettingViewModel);
@@ -130,7 +212,9 @@ public class BuyFragment extends Fragment {
     }
 
     private void setLocation() {
-        String[] name = mSettingViewModel.getSelectedAddress().getAddressName().split("\n");
-        mBuyBinding.textViewAddressName.setText(name[0] + "\t" + name[1]);
+        if (mSettingViewModel.getSelectedAddress() != null) {
+            String[] name = mSettingViewModel.getSelectedAddress().getAddressName().split("\n");
+            mBuyBinding.textViewAddressName.setText(getString(R.string.address, name[0], name[1]));
+        }
     }
 }
