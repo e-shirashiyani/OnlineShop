@@ -14,6 +14,7 @@ import com.example.onlineshop.adapter.OrderedProductAdapter;
 import com.example.onlineshop.data.model.BillingAddress;
 import com.example.onlineshop.data.model.Cart;
 import com.example.onlineshop.data.model.Comment;
+import com.example.onlineshop.data.model.Coupons;
 import com.example.onlineshop.data.model.Customer;
 import com.example.onlineshop.data.model.Product;
 import com.example.onlineshop.data.model.ShippingAddress;
@@ -230,4 +231,13 @@ public class CartViewModel extends AndroidViewModel {
     public MutableLiveData<Comment> getLiveDataOneComment() {
         return mStoreRepository.getLiveDataOneComment();
     }
+
+    public void fetchCoupons() {
+        mStoreRepository.fetchCouponsAsync();
+    }
+
+    public LiveData<List<Coupons>> getLiveDataCoupons() {
+        return mStoreRepository.getLiveDataCoupons();
+    }
 }
+

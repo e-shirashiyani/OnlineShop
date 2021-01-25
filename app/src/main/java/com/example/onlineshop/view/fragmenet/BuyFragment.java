@@ -185,7 +185,7 @@ public class BuyFragment extends Fragment {
                 else if (mBuyBinding.editTextCode.getText().toString().equals(mCode)) {
                     Toast toast = Toast.makeText(getContext(), R.string.discount_code_is_applied_once,
                             Toast.LENGTH_LONG);
-                    TextView textView = (TextView) toast.getView().findViewById(android.R.id.message);
+                    TextView textView =  toast.getView().findViewById(android.R.id.message);
                     textView.setTextColor(getResources().getColor(R.color.warning));
                     toast.show();
                 }else if (!mBuyBinding.editTextCode.getText().toString().equals(mCode)){

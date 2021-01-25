@@ -213,7 +213,8 @@
                         android:gravity="center"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/toman" />
+                        app:layout_constraintStart_toEndOf="@id/toman"
+                        android:layout_marginLeft="10dp" />
 
                     <TextView
                         android:id="@+id/toman"
@@ -226,7 +227,8 @@
                         android:text="@string/toman"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/total" />
+                        app:layout_constraintStart_toEndOf="@id/total"
+                        android:layout_marginLeft="4dp" />
 
                     <TextView
                         android:id="@+id/total"
@@ -239,7 +241,8 @@
                         android:text="@string/total"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@id/guideline_start" />
+                        app:layout_constraintStart_toStartOf="@id/guideline_start"
+                        android:layout_marginLeft="16dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
