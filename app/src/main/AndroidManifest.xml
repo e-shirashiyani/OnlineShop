@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShop">
-        <activity android:name=".view.activity.EditCommentActivity"></activity>
+        <activity android:name=".view.activity.ConnectionActivity"></activity>
+        <activity android:name=".view.activity.EditCommentActivity" />
         <activity android:name=".view.activity.MapActivity" />
         <activity android:name=".view.activity.BuyActivity" />
 

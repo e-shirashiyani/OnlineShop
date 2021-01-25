@@ -16,12 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstanceCategory {
 
-    private static com.example.onlineshop.data.remote.retrofit.RetrofitInstanceCategory sInstance;
+    private static RetrofitInstanceCategory sInstance;
     private Retrofit mRetrofit;
 
-    public static com.example.onlineshop.data.remote.retrofit.RetrofitInstanceCategory getInstance() {
+    public static RetrofitInstanceCategory getInstance() {
         if (sInstance == null)
-            sInstance = new com.example.onlineshop.data.remote.retrofit.RetrofitInstanceCategory();
+            sInstance = new RetrofitInstanceCategory();
 
         return sInstance;
     }
