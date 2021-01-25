@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.wifi.WifiManager;
 
 import com.example.onlineshop.data.repository.SplashDBRepository;
+import com.example.onlineshop.view.activity.ConnectionActivity;
 import com.example.onlineshop.viewmodel.SplashViewModel;
 
 public class ConnectionReceiver extends BroadcastReceiver {
@@ -24,7 +25,7 @@ public class ConnectionReceiver extends BroadcastReceiver {
         else if(wifiState==WifiManager.WIFI_STATE_DISABLED){
             mSplashDBRepository.setWiFiEnable(false);
             if(!mSplashDBRepository.isInConnectionActivity())
-                context.startActivity(Connection);
+                context.startActivity(ConnectionActivity.newIntent(context));
         }
 
 
