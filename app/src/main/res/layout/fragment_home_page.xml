@@ -77,7 +77,7 @@ android:layout_marginTop="18dp"
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_highest_score"
                 android:layout_width="379dp"
-                android:layout_height="208dp"
+                android:layout_height="227dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"

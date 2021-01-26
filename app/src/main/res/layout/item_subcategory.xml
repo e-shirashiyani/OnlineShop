@@ -38,35 +38,36 @@
 
         <TextView
             android:id="@+id/text_name_subcategory"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="197dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
             android:maxLines="2"
-           app:layout_constraintTop_toTopOf="@id/image_subcategory"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/image_subcategory"
             app:layout_constraintEnd_toStartOf="@id/image_subcategory"
-            android:layout_marginEnd="12dp"
-            android:gravity="center"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            style="@style/TextAppearance.AppCompat.Medium"
-            tools:text="@string/menu_category"
-            android:layout_marginRight="12dp" />
+            app:layout_constraintTop_toTopOf="@id/image_subcategory"
+            tools:text="@string/menu_category" />
 
         <TextView
             android:id="@+id/text_price_subcategory"
+            style="@style/TextAppearance.AppCompat.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/image_subcategory"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:gravity="center"
+            android:textColor="#2C516E"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="@id/image_subcategory"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:textColor="@color/purple_700"
-            android:textStyle="bold|italic"
-            android:textSize="14sp"
-            style="@style/TextAppearance.AppCompat.Caption"
-            tools:text="@string/menu_category"
-            android:layout_marginRight="8dp" />
+            app:layout_constraintTop_toTopOf="@id/image_subcategory"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="@string/menu_category" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

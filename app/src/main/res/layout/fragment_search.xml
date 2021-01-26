@@ -12,6 +12,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="#f1f6f9"
         tools:context=".view.fragment.SearchFragment">
 
 

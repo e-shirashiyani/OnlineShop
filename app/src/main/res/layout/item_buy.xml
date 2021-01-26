@@ -54,7 +54,8 @@
             android:id="@+id/image_cart_product"
             android:layout_width="106dp"
             android:layout_height="121dp"
-            android:src="@drawable/ic_image"
+            android:src="@drawable/ic_shopping_cart__3_"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +82,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="center"
-            android:textColor="#000000"
+            android:textColor="#477FAC"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/image_cart_product"

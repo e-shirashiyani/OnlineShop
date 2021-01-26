@@ -66,7 +66,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             Glide.with(itemView)
                     .load(category.getImage())
                     .centerCrop()
-                    .placeholder(R.mipmap.ic_launcher)
+                    .placeholder(R.drawable.ic_shopping_basket)
                     .into(mItemCategoryBinding.imageCategory);
         }
     }

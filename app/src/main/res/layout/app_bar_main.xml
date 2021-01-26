@@ -41,9 +41,10 @@
             android:layout_gravity="bottom|end"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
+            app:backgroundTint="#273D4E"
+android:background="@drawable/ic_baseline_search_24"
 
-
-            app:srcCompat="@drawable/ic_shopping_basket" />
+             />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main_layout_constraint"
-        tools:context=".view.fragment.LocationFragment">
+        tools:context=".view.fragment.LocationFragment"
+        android:background="#394867">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,23 +31,27 @@
 
             <ImageView
                 android:id="@+id/imageView_add_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="36dp"
+                android:layout_width="37dp"
+                android:layout_height="33dp"
                 android:layout_margin="16dp"
-                android:src="@drawable/ic_add_location" />
+                android:layout_marginTop="36dp"
+                android:src="@drawable/ic_add_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/add_location"
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/imageView_add_location"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_margin="16dp"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:text="@string/add_location" />
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/add_location"
+                android:textColor="#5C829F"
+                app:layout_constraintStart_toEndOf="@id/imageView_add_location"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView_add_location_arrow"

@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragment.NotificationFragment">
+        tools:context=".view.fragment.NotificationFragment"
+        android:background="#394867">
 
         <TextView
             android:id="@+id/notification_title"
@@ -26,7 +27,7 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:textStyle="italic"
             android:text="@string/notification"
-            android:textColor="#14274e"/>
+            android:textColor="#8DA7DC"/>
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switch_notification"
@@ -50,35 +51,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{()-> settingViewModel.onClickNotificationRadioButtonTime()}"
-                android:text="@string/_3hour" />
+                android:text="@string/_3hour"
+                android:textColor="#C0D2E1"/>
 
             <RadioButton
                 android:id="@+id/radioButton_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{()-> settingViewModel.onClickNotificationRadioButtonTime()}"
-                android:text="@string/_5hour" />
+                android:text="@string/_5hour"
+                android:textColor="#C0D2E1"/>
 
             <RadioButton
                 android:id="@+id/radioButton_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{()-> settingViewModel.onClickNotificationRadioButtonTime()}"
-                android:text="@string/_8hour" />
+                android:text="@string/_8hour"
+                android:textColor="#C0D2E1"/>
 
             <RadioButton
                 android:id="@+id/radioButton_12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{()-> settingViewModel.onClickNotificationRadioButtonTime()}"
-                android:text="@string/_12hour" />
+                android:text="@string/_12hour"
+                android:textColor="#C0D2E1"/>
 
             <RadioButton
                 android:id="@+id/radioButton_none_of_them"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{()-> settingViewModel.onClickNotificationTime()}"
-                android:text="@string/none_of_them" />
+                android:text="@string/none_of_them"
+                android:textColor="#C0D2E1"/>
 
             <EditText
                 android:id="@+id/editTextTime"
@@ -98,8 +104,8 @@
             android:layout_margin="16dp"
             android:onClick="@{()-> settingViewModel.onClickNotificationSave()}"
             android:text="@string/save"
-            android:textColor="@color/white"
-            android:background="#333A63"/>
+            android:textColor="@color/black"
+            android:background="#8DA7DC"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,8 +27,6 @@
             android:id="@+id/image_most_visited"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/textView_name_most_visited"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,10 +82,12 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_divider_below_image"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.34"
             card_view:text="price" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

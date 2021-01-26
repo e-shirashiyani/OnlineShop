@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.onlineshop.R;
 import com.example.onlineshop.data.model.Product;
+
 import com.example.onlineshop.databinding.ItemHighestScoreBinding;
 import com.example.onlineshop.viewmodel.ProductViewModel;
 
@@ -85,9 +86,8 @@ public class HighestScoreProductAdapter extends RecyclerView.Adapter<HighestScor
             Glide.with(mItemHighestScoreBinding.getRoot())
                     .load(product.getImages().get(0).getSrc())
                     .centerCrop()
-                    .placeholder(R.mipmap.ic_launcher)
+                    .placeholder(R.drawable.ic_shopping_cart__3_)
                     .into(mItemHighestScoreBinding.imageHighestScore);
         }
     }
-    }
-
+}

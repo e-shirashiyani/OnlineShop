@@ -93,13 +93,13 @@ public class LatestProductAdapter extends RecyclerView.Adapter<LatestProductAdap
             if (product.getImages().size() == 0){
                 Glide.with(mItemLatestBinding.getRoot())
                         .load(R.drawable.ic_shopping_cart__3_)
-.fitCenter()
-                        .placeholder(R.drawable.splash2)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_shopping_cart__3_)
                         .into(mItemLatestBinding.imageLatest);
             }else {
                 Glide.with(mItemLatestBinding.getRoot())
                         .load(product.getImages().get(0).getSrc())
-.fitCenter()
+                        .centerCrop()
                         .placeholder(R.drawable.ic_shopping_cart__3_)
                         .into(mItemLatestBinding.imageLatest);
             }

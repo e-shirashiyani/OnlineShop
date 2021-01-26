@@ -12,7 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragment.SettingsFragment">
+        tools:context=".view.fragment.SettingsFragment"
+    android:background="#394867">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,14 +29,14 @@
 
         <ImageView
             android:id="@+id/imageView_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_notifications"
+            app:layout_constraintBottom_toBottomOf="@id/notification"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/notification"
-            app:layout_constraintBottom_toBottomOf="@id/notification"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_notifications" />
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/notification"
@@ -47,7 +48,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             style="@style/TextAppearance.AppCompat.Title"
-            android:text="@string/notification" />
+            android:text="@string/notification"
+            android:textColor="#8DA7DC"/>
 
         <ImageView
             android:id="@+id/imageView_notification_arrow"
@@ -74,13 +76,13 @@
 
         <ImageView
             android:id="@+id/imageView_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="36dp"
+            android:layout_width="48dp"
+            android:layout_height="37dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_location_on"/>
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_location_on"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/location"
@@ -90,7 +92,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="16dp"
             style="@style/TextAppearance.AppCompat.Title"
-            android:text="@string/location" />
+            android:text="@string/location"
+            android:textColor="#8DA7DC"/>
 
         <ImageView
             android:id="@+id/imageView_location_arrow"

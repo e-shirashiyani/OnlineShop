@@ -97,7 +97,7 @@
                     android:id="@+id/constraint_layout_continue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/cart_button_layout"
+                    android:background="#14274E"
                     app:layout_constraintBottom_toBottomOf="parent"
                     >
 
@@ -140,6 +140,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginBottom="28dp"
                         android:gravity="center"
+                        android:textColor="#BF5330"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@id/toman" />
@@ -154,6 +155,7 @@
                         android:layout_marginBottom="32dp"
                         android:gravity="center"
                         android:text="@string/toman"
+                        android:textColor="#4F7898"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@id/total" />
@@ -168,7 +170,7 @@
                         android:layout_marginBottom="28dp"
                         android:gravity="center"
                         android:text="@string/total"
-                        android:textColor="#353C67"
+                        android:textColor="#87A6BF"
                         app:layout_constraintBaseline_toBaselineOf="@id/button_continue_buying"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/guideline_start" />
